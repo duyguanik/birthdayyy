@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love! 🎉</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', cursive;
+        }
+
+        body {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .cake {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+        }
+
+        .layer {
+            background: #fff;
+            border-radius: 10px;
+            position: absolute;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .layer-bottom {
+            width: 180px;
+            height: 80px;
+            bottom: 0;
+            left: 10px;
+        }
+
+        .layer-middle {
+            width: 140px;
+            height: 60px;
+            bottom: 70px;
+            left: 30px;
+        }
+
+        .layer-top {
+            width: 100px;
+            height: 40px;
+            bottom: 120px;
+            left: 50px;
+        }
+
+        .candle {
+            background: #ffd700;
+            width: 10px;
+            height: 40px;
+            position: absolute;
+            bottom: 160px;
+            left: 95px;
+            animation: flicker 0.1s infinite;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.9; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        .message {
+            font-size: 1.2em;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        .love-letter {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .love-letter:hover {
+            transform: scale(1.1);
+        }
+
+        .envelope {
+            font-size: 40px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .letter-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            max-width: 500px;
+            width: 90%;
+            color: #333;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .message {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday My Love! ❤️</h1>
+        
+        <div class="cake">
+            <div class="layer layer-bottom"></div>
+            <div class="layer layer-middle"></div>
+            <div class="layer layer-top"></div>
+            <div class="candle"></div>
+        </div>
+
+        <p class="message">
+            🎂 To the most amazing person in my life<br>
+            ✨ Every moment with you is magical<br>
+            🌟 You make my world complete<br>
+            💖 I love you more than words can say
+        </p>
+
+        <div class="love-letter" onclick="openLetter()">
+            <i class="fas fa-envelope envelope"></i>
+        </div>
+
+        <div id="letterModal" class="letter-modal">
+            <span class="close-btn" onclick="closeLetter()">&times;</span>
+            <h2>My Dearest [Name],</h2>
+            <p>[Your love letter text will go here...]</p>
+            <p>With all my love,<br>[Your Name]</p>
+        </div>
+    </div>
+
+    <script>
+        function openLetter() {
+            document.getElementById('letterModal').style.display = 'block';
+        }
+
+        function closeLetter() {
+            document.getElementById('letterModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('letterModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
