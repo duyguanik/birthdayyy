@@ -1,198 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Aryan! 🎂</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Dancing Script', cursive;
-        }
-
-        body {
-            background: linear-gradient(45deg, #8B0000, #FF6347);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        h1 {
-            font-size: 3.5em;
-            color: white;
-            text-shadow: 0 0 10px #FFD700;
-            animation: glow 2s infinite alternate;
-        }
-
-        @keyframes glow {
-            0% { text-shadow: 0 0 10px #FFD700; }
-            100% { text-shadow: 0 0 20px #FFA500; }
-        }
-
-        .cake-container {
-            position: relative;
-            margin-top: 20px;
-        }
-
-        .cake {
-            width: 200px;
-            height: 120px;
-            background: linear-gradient(to bottom, #FFDAB9, #FFB6C1);
-            border-radius: 20px;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .candle {
-            position: absolute;
-            width: 10px;
-            height: 40px;
-            background: red;
-            left: 50%;
-            top: -40px;
-            transform: translateX(-50%);
-            border-radius: 5px;
-        }
-
-        .flame {
-            position: absolute;
-            width: 15px;
-            height: 25px;
-            background: orange;
-            left: 50%;
-            top: -25px;
-            transform: translateX(-50%);
-            border-radius: 50%;
-            animation: flicker 0.8s infinite alternate;
-        }
-
-        @keyframes flicker {
-            0% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0.7; transform: scale(1.2); }
-        }
-
-        .love-letter {
-            position: fixed;
-            bottom: 50px;
-            right: 50px;
-            font-size: 50px;
-            color: white;
-            cursor: pointer;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-
-        .letter-modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            width: 80%;
-            max-width: 600px;
-            box-shadow: 0 0 30px rgba(255,0,0,0.5);
-            border-radius: 15px;
-            text-align: center;
-            font-size: 1.4em;
-            color: #8B0000;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 25px;
-            cursor: pointer;
-            color: red;
-        }
-
-        .heart {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background: red;
-            transform: rotate(45deg);
-            animation: floatHearts 4s infinite linear;
-        }
-
-        .heart::before,
-        .heart::after {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background: red;
-            border-radius: 50%;
-        }
-
-        .heart::before { left: -8px; }
-        .heart::after { top: -8px; }
-
-        @keyframes floatHearts {
-            0% { transform: translateY(0) rotate(45deg); opacity: 1; }
-            100% { transform: translateY(-150px) rotate(45deg); opacity: 0; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy Birthday Aryan!</title>
+  <!-- Google Fonts: Montserrat for body, Dancing Script for başlık -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for envelope icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Genel Sıfırlama */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .container {
+      text-align: center;
+      z-index: 2;
+    }
+    /* Pasta ve Mum */
+    .cake-container {
+      margin: 20px 0;
+    }
+    .cake {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+    }
+    .candle {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 40px;
+      background: #FF6F61;
+      border-radius: 5px;
+    }
+    .flame {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 15px;
+      height: 20px;
+      background: #FFD700;
+      border-radius: 50%;
+      animation: flicker 0.8s infinite alternate;
+    }
+    @keyframes flicker {
+      from { opacity: 1; transform: translateX(-50%) scale(1); }
+      to { opacity: 0.7; transform: translateX(-50%) scale(1.2); }
+    }
+    /* Zarf Butonu */
+    .letter-btn {
+      font-size: 2.5rem;
+      color: #FF6F61;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: transform 0.3s ease;
+    }
+    .letter-btn:hover {
+      transform: scale(1.1);
+    }
+    /* Mektup Modalı */
+    .letter-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 600px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 10;
+      overflow-y: auto;
+      max-height: 80vh;
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .modal-header h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      color: #333;
+    }
+    .close-btn {
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #FF6F61;
+    }
+    .modal-content {
+      text-align: left;
+      line-height: 1.6;
+      color: #555;
+      font-size: 1rem;
+    }
+    /* Minimal Kalp Animasyonları */
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: #FF6F61;
+      transform: rotate(45deg);
+      opacity: 0.8;
+      animation: float 4s ease-in-out infinite;
+      z-index: 1;
+    }
+    .heart::before, .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #FF6F61;
+      border-radius: 50%;
+    }
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+    @keyframes float {
+      from { transform: translateY(0) rotate(45deg); opacity: 1; }
+      to { transform: translateY(-100px) rotate(45deg); opacity: 0; }
+    }
+  </style>
 </head>
 <body>
-
-    <h1>Happy Birthday My Love! ❤️</h1>
-
+  <div class="container">
+    <h1>Happy Birthday Aryan!</h1>
     <div class="cake-container">
-        <div class="cake">
-            <div class="candle"></div>
-            <div class="flame"></div>
-        </div>
+      <div class="cake">
+        <div class="candle"></div>
+        <div class="flame"></div>
+      </div>
     </div>
-
-    <div class="love-letter" onclick="openLetter()">
-        <i class="fas fa-envelope"></i>
+    <div class="letter-btn" onclick="openLetter()">
+      <i class="fas fa-envelope"></i>
     </div>
+  </div>
 
-    <div id="letterModal" class="letter-modal">
-        <span class="close-btn" onclick="closeLetter()">&times;</span>
-        <p>My Love,</p>
-        <p>Little did I know that 24 years ago today, the love of my life was born...</p>
-        <p>I love you endlessly! ❤️</p>
-        <p>Forever Yours,<br>Duygu</p>
+  <!-- Mektup Modalı -->
+  <div id="letterModal" class="letter-modal">
+    <div class="modal-header">
+      <h2>My Love,</h2>
+      <span class="close-btn" onclick="closeLetter()">&times;</span>
     </div>
+    <div class="modal-content">
+      <p>My Love,</p>
+      <p>Little did I know that 24 years ago today, the love of my life, the light in my days, and the peace in my storms would be born. I love you more than words can express, and I will love you for the rest of my life. You are my everythinggg, the greatest gift life has given me. I cannot begin to describe how grateful I am to God and to Madhura Mommy for bringing you into this world, for making our paths cross so that I could find my other half.</p>
+      <p>Today is the most special day for me because you are the most important person in my life. It feels like a miracle that you were born in India and I was born in Türkiye, yet somehow, against all odds, we found each other in Germany. Don’t you think we were meant to be?</p>
+      <p>My love, you are the first person with whom I’ve ever dreamed of building a future. On nights when I can’t sleep, I look at our pictures and videos, imagining the life we will create together. I know that one day, we will be the happiest family in the world. I want to be with you to celebrate your birthdays, to laugh with you every day, and to love and support you through everything for the rest of my life. You are my one and only, and there is no one else in this world for me but you.</p>
+      <p>You deserve nothing but the best, and I promise that I will be there for your next birthday. I know this is the first and last birthday we’ll have to spend apart and after this, we will be together forever. I love you so much, and I’m sending you a hundred kisses from here. I’m sorry I can’t be with you today, but I am celebrating you from afar.</p>
+      <p>I wish you a life filled with happiness, success, peace, health, and most importantly… ME! Happy birthday, my love. I am so incredibly grateful that you were born. You are the best, the most handsome, the smartest, the kindest, and the most thoughtful boyfriend in the world. Thank you for everything you’ve given me. I promise to stand by your side for the rest of my life.</p>
+      <p>I love you more than words can say, I love you endlessly, I love you in every universe 😍😍😍😍</p>
+      <p>Duygu</p>
+    </div>
+  </div>
 
-    <script>
-        function openLetter() {
-            document.getElementById('letterModal').style.display = 'block';
-            createHearts();
-        }
-
-        function closeLetter() {
-            document.getElementById('letterModal').style.display = 'none';
-        }
-
-        function createHearts() {
-            for(let i = 0; i < 10; i++) {
-                let heart = document.createElement('div');
-                heart.className = 'heart';
-                heart.style.left = Math.random() * 100 + 'vw';
-                document.body.appendChild(heart);
-                setTimeout(() => heart.remove(), 4000);
-            }
-        }
-
-        setInterval(createHearts, 3000);
-    </script>
-
+  <script>
+    // Modal açma ve kapama fonksiyonları
+    function openLetter() {
+      document.getElementById('letterModal').style.display = 'block';
+      createHearts();
+    }
+    function closeLetter() {
+      document.getElementById('letterModal').style.display = 'none';
+    }
+    // Arka planda rastgele kalp animasyonları oluşturma
+    function createHearts() {
+      for (let i = 0; i < 8; i++) {
+        let heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.top = Math.random() * 100 + 'vh';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+      }
+    }
+    setInterval(createHearts, 3000);
+  </script>
 </body>
 </html>
