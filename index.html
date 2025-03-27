@@ -3,42 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday My Brown Bear! 🐻</title>
+    <title>Happy Birthday My Brown Bear!</title>
     <style>
-        :root {
-            --primary-color: #d63031;
-            --secondary-color: #6d214f;
-            --accent-color: #ff6b6b;
-            --light-pink: #ffe6f2;
-            --soft-white: #fff8f8;
-        }
-        
         body {
-            background-color: var(--light-pink);
+            background-color: #ffe6f2;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            color: var(--secondary-color);
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            background-image: radial-gradient(circle at 5% 5%, #ffb6c1 1px, transparent 1px);
+            color: #6d214f;
+            background-image: radial-gradient(#ffb6c1 2px, transparent 2px);
             background-size: 30px 30px;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
         }
         
         h1 {
-            font-size: 2.8rem;
+            font-size: 36px;
             font-weight: bold;
-            color: var(--primary-color);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            margin-top: 2rem;
-            margin-bottom: 1.5rem;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
+            color: #d63031;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-top: 20px;
+            margin-bottom: 40px;
         }
         
         /* Interactive Rose Bouquet */
@@ -46,27 +31,15 @@
             position: relative;
             width: 300px;
             height: 350px;
-            margin: 2rem auto;
+            margin: 40px auto;
             cursor: pointer;
-            transition: transform 0.3s ease;
-            animation: float 4s ease-in-out infinite;
-        }
-        
-        .bouquet:hover {
-            transform: scale(1.05);
         }
         
         .rose {
             position: absolute;
-            font-size: 2.5rem;
+            font-size: 40px;
             animation: sway 5s infinite ease-in-out;
             filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.3));
-            transition: all 0.3s ease;
-        }
-        
-        .rose:hover {
-            transform: scale(1.2);
-            animation: pulse 0.5s infinite alternate;
         }
         
         .ribbon {
@@ -79,31 +52,11 @@
             background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
             border-radius: 5px;
             z-index: -1;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         
-        .ribbon::before, .ribbon::after {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #ff4757;
-            bottom: -10px;
-            border-radius: 50%;
-        }
-        
-        .ribbon::before {
-            left: 20px;
-        }
-        
-        .ribbon::after {
-            right: 20px;
-        }
-        
-        /* Cake Section */
+        /* Cake Styles */
         .cake-container {
-            margin: 3rem auto;
-            perspective: 1000px;
+            margin: 40px auto;
         }
         
         .cake {
@@ -111,12 +64,6 @@
             width: 250px;
             height: 200px;
             margin: 0 auto;
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease;
-        }
-        
-        .cake:hover {
-            transform: rotateY(15deg);
         }
         
         .cake-layer {
@@ -125,14 +72,11 @@
             height: 50px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transform-origin: bottom;
-            transition: all 0.3s ease;
         }
         
         .cake-layer:nth-child(1) {
             background: linear-gradient(to bottom, #ff9999, #ff7777);
             top: 0;
-            transform: translateZ(10px);
         }
         
         .cake-layer:nth-child(2) {
@@ -140,7 +84,6 @@
             top: 50px;
             width: 110%;
             left: -5%;
-            transform: translateZ(5px);
         }
         
         .cake-layer:nth-child(3) {
@@ -163,11 +106,6 @@
             border-radius: 3px;
             cursor: pointer;
             z-index: 10;
-            transition: transform 0.2s ease;
-        }
-        
-        .candle:hover {
-            transform: translateX(-50%) scale(1.1);
         }
         
         .flame {
@@ -182,92 +120,49 @@
             z-index: 11;
             box-shadow: 0 0 20px #ff9966;
             animation: flicker 0.8s infinite alternate;
-            transform-origin: bottom;
         }
         
-        /* Interactive Letter */
+        /* Letter Styles */
         .letter-btn {
-            background: linear-gradient(135deg, var(--accent-color), #ff8e8e);
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
             color: white;
             border: none;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
+            padding: 15px 30px;
+            font-size: 18px;
             border-radius: 50px;
             cursor: pointer;
-            margin: 2rem auto;
+            margin: 20px auto;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        
-        .letter-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        .letter-btn:active {
-            transform: translateY(1px);
-        }
-        
-        .letter-btn::after {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255,255,255,0.1);
-            transform: rotate(30deg);
             transition: all 0.3s;
-        }
-        
-        .letter-btn:hover::after {
-            left: 100%;
         }
         
         .letter-container {
             width: 80%;
             max-width: 700px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: var(--soft-white);
+            margin: 20px auto;
+            padding: 30px;
+            background: #fff8f8;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: left;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            position: relative;
+            font-size: 18px;
+            line-height: 1.6;
             display: none;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.5s ease;
         }
         
-        .letter-container.visible {
-            display: block;
-            transform: translateY(0);
-            opacity: 1;
+        /* Animations */
+        @keyframes sway {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
         }
         
-        .letter-container::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            right: 20px;
-            height: 20px;
-            background: #ffcccc;
-            border-radius: 50%;
-            filter: blur(10px);
-            z-index: -1;
+        @keyframes flicker {
+            0%, 100% { transform: translateX(-50%) scale(1) rotate(-2deg); }
+            25% { transform: translateX(-50%) scale(1.05) rotate(0deg); }
+            50% { transform: translateX(-50%) scale(0.95) rotate(2deg); }
+            75% { transform: translateX(-50%) scale(1.1) rotate(-1deg); }
         }
         
-        /* Floating Hearts */
         .hearts {
             position: fixed;
             top: 0;
@@ -284,85 +179,6 @@
             animation: float-up 4s linear forwards;
         }
         
-        /* Confetti */
-        .confetti {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 100;
-            display: none;
-        }
-        
-        .confetti-piece {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: var(--accent-color);
-            opacity: 0;
-            animation: confetti-fall 5s linear forwards;
-        }
-        
-        /* Photo Frame */
-        .photo-frame {
-            width: 200px;
-            height: 200px;
-            margin: 2rem auto;
-            border: 10px solid white;
-            border-radius: 5px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            background: #fff;
-            overflow: hidden;
-            transition: all 0.5s ease;
-            position: relative;
-        }
-        
-        .photo-frame:hover {
-            transform: rotate(-5deg) scale(1.05);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        }
-        
-        .photo-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #ffcccc, #ff9999);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-        
-        @keyframes sway {
-            0%, 100% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
-        }
-        
-        @keyframes pulse {
-            from { transform: scale(1); }
-            to { transform: scale(1.2); }
-        }
-        
-        @keyframes flicker {
-            0%, 100% { transform: translateX(-50%) scale(1) rotate(-2deg); }
-            25% { transform: translateX(-50%) scale(1.05) rotate(0deg); }
-            50% { transform: translateX(-50%) scale(0.95) rotate(2deg); }
-            75% { transform: translateX(-50%) scale(1.1) rotate(-1deg); }
-        }
-        
         @keyframes float-up {
             0% { 
                 transform: translateY(100vh) rotate(0deg);
@@ -373,95 +189,111 @@
                 opacity: 0;
             }
         }
-        
-        @keyframes confetti-fall {
-            0% { 
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 1;
-            }
-            100% { 
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .letter-container {
-                width: 90%;
-                padding: 1.5rem;
-            }
-            
-            .bouquet {
-                width: 250px;
-                height: 300px;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="hearts" id="hearts"></div>
-    <div class="confetti" id="confetti"></div>
     
-    <div class="container">
-        <h1>Happy Birthday My Brown Bear! 🎂</h1>
-        
-        <!-- Interactive Rose Bouquet -->
-        <div class="bouquet" id="bouquet">
-            <div class="ribbon"></div>
-            <!-- Roses will be added dynamically with JavaScript -->
+    <h1>Happy Birthday My Brown Bear! 🎂</h1>
+    
+    <!-- Rose Bouquet -->
+    <div class="bouquet" id="bouquet">
+        <div class="ribbon"></div>
+        <!-- Roses added by JavaScript -->
+    </div>
+    
+    <!-- Cake -->
+    <div class="cake-container">
+        <div class="cake">
+            <div class="cake-layer"></div>
+            <div class="cake-layer"></div>
+            <div class="cake-layer"></div>
+            <div class="candle" id="candle"></div>
+            <div class="flame" id="flame"></div>
         </div>
-        
-        <!-- Cake Section -->
-        <div class="cake-container">
-            <div class="cake">
-                <div class="cake-layer"></div>
-                <div class="cake-layer"></div>
-                <div class="cake-layer"></div>
-                <div class="candle" id="candle"></div>
-                <div class="flame" id="flame"></div>
-            </div>
-        </div>
-        
-        <!-- Photo Frame -->
-        <div class="photo-frame">
-            <div class="photo-placeholder">
-                Our Photo Here
-            </div>
-        </div>
-        
-        <!-- Interactive Letter Button -->
-        <button class="letter-btn" id="letterButton">
-            <span>Read My Love Letter</span> 💌
-        </button>
-        
-        <!-- Love Letter - Your Original Text Preserved Exactly -->
-        <div class="letter-container" id="letterContainer">
-            <p><strong>My Love,</strong></p>
-            <p>Little did I know that 24 years ago today, the love of my life, the light in my days, and the peace in my storms would be born. I love you more than words can express, and I will love you for the rest of my life. You are my everythinggg, the greatest gift life has given me. I cannot begin to describe how grateful I am to God and to Madhura Mommy for bringing you into this world, for making our paths cross so that I could find my other half.</p>
-            <p>Today is the most special day for me because you are the most important person in my life. It feels like a miracle that you were born in India and I was born in Türkiye, yet somehow, against all odds, we found each other in Germany. Don't you think we were meant to be?</p>
-            <p>My love, you are the first person with whom I've ever dreamed of building a future. On nights when I can't sleep, I look at our pictures and videos, imagining the life we will create together. I know that one day, we will be the happiest family in the world. I want to be with you to celebrate your birthdays, to laugh with you every day, and to love and support you through everything for the rest of my life. You are my one and only, and there is no one else in this world for me but you.</p>
-            <p>You deserve nothing but the best, and I promise that I will be there for your next birthday. I know this is the first and last birthday we'll have to spend apart and after this, we will be together forever. I love you so much, and I'm sending you a hundred kisses from here. I'm sorry I can't be with you today, but I am celebrating you from afar.</p>
-            <p>I wish you a life filled with happiness, success, peace, health, and most importantly... ME! Happy birthday, my love. I am so incredibly grateful that you were born. You are the best, the most handsome, the smartest, the kindest, and the most thoughtful boyfriend in the world. Thank you for everything you've given me. I promise to stand by your side for the rest of my life.</p>
-            <p>I love you more than words can say, I love you endlessly, I love you in every universe 😍😍😍😍</p>
-            <p><em>Forever yours,</em></p>
-            <p><em>Duygu</em></p>
-        </div>
+    </div>
+    
+    <!-- Letter Button -->
+    <button class="letter-btn" id="letterButton">
+        Read My Love Letter 💌
+    </button>
+    
+    <!-- Your Original Love Letter - Completely Unchanged -->
+    <div class="letter-container" id="letterContainer">
+        <p><strong>My Love,</strong></p>
+        <p>Little did I know that 24 years ago today, the love of my life, the light in my days, and the peace in my storms would be born. I love you more than words can express, and I will love you for the rest of my life. You are my everythinggg, the greatest gift life has given me. I cannot begin to describe how grateful I am to God and to Madhura Mommy for bringing you into this world, for making our paths cross so that I could find my other half.</p>
+        <p>Today is the most special day for me because you are the most important person in my life. It feels like a miracle that you were born in India and I was born in Türkiye, yet somehow, against all odds, we found each other in Germany. Don't you think we were meant to be?</p>
+        <p>My love, you are the first person with whom I've ever dreamed of building a future. On nights when I can't sleep, I look at our pictures and videos, imagining the life we will create together. I know that one day, we will be the happiest family in the world. I want to be with you to celebrate your birthdays, to laugh with you every day, and to love and support you through everything for the rest of my life. You are my one and only, and there is no one else in this world for me but you.</p>
+        <p>You deserve nothing but the best, and I promise that I will be there for your next birthday. I know this is the first and last birthday we'll have to spend apart and after this, we will be together forever. I love you so much, and I'm sending you a hundred kisses from here. I'm sorry I can't be with you today, but I am celebrating you from afar.</p>
+        <p>I wish you a life filled with happiness, success, peace, health, and most importantly... ME! Happy birthday, my love. I am so incredibly grateful that you were born. You are the best, the most handsome, the smartest, the kindest, and the most thoughtful boyfriend in the world. Thank you for everything you've given me. I promise to stand by your side for the rest of my life.</p>
+        <p>I love you more than words can say, I love you endlessly, I love you in every universe 😍😍😍😍</p>
+        <p><em>Forever yours,</em></p>
+        <p><em>Duygu</em></p>
     </div>
 
     <script>
-        // Create interactive rose bouquet
+        // Create rose bouquet
         const bouquet = document.getElementById('bouquet');
-        const roseColors = ['🌹', '🌸', '🌺', '🌻', '🌼', '💐'];
+        const roses = ['🌹', '🌸', '🌺', '🌻'];
         
         for (let i = 0; i < 12; i++) {
             const rose = document.createElement('div');
             rose.className = 'rose';
-            rose.innerHTML = roseColors[Math.floor(Math.random() * roseColors.length)];
+            rose.innerHTML = roses[Math.floor(Math.random() * roses.length)];
             
-            // Position roses in a bouquet shape
-            const angle = (i / 
+            const angle = (i / 12) * Math.PI * 2;
+            const distance = 80 + Math.random() * 40;
+            const x = 150 + Math.cos(angle) * distance - 20;
+            const y = 150 + Math.sin(angle) * distance - 100;
+            
+            rose.style.left = `${x}px`;
+            rose.style.top = `${y}px`;
+            rose.style.animationDelay = `${Math.random() * 2}s`;
+            
+            bouquet.appendChild(rose);
+        }
+        
+        // Candle interaction
+        const candle = document.getElementById('candle');
+        const flame = document.getElementById('flame');
+        let isLit = true;
+        
+        candle.addEventListener('click', () => {
+            isLit = !isLit;
+            flame.style.display = isLit ? 'block' : 'none';
+            createHearts(isLit ? 10 : 20);
+        });
+        
+        // Letter button
+        const letterButton = document.getElementById('letterButton');
+        const letterContainer = document.getElementById('letterContainer');
+        
+        letterButton.addEventListener('click', () => {
+            letterContainer.style.display = letterContainer.style.display === 'block' ? 'none' : 'block';
+            createHearts(15);
+        });
+        
+        // Create hearts
+        function createHearts(count) {
+            const heartsContainer = document.getElementById('hearts');
+            
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                heartsContainer.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 4000);
+            }
+        }
+        
+        // Initial hearts
+        createHearts(5);
+    </script>
+</body>
+</html>
