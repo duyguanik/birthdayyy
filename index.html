@@ -10,11 +10,14 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             color: #6d214f;
-            background-image: radial-gradient(#ffb6c1 2px, transparent 2px);
-            background-size: 30px 30px;
             margin: 0;
             padding: 20px;
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, #ffb6c1 1.5px, transparent 1.5px),
+                radial-gradient(circle at 30% 50%, #ffb6c1 1.5px, transparent 1.5px),
+                radial-gradient(circle at 70% 80%, #ffb6c1 1.5px, transparent 1.5px);
+            background-size: 50px 50px;
         }
         
         h1 {
@@ -26,43 +29,149 @@
             margin-bottom: 20px;
         }
         
-        /* Cake Styles */
-        .cake-container {
-            margin: 30px auto;
-            position: relative;
-        }
-        
         .cake {
             position: relative;
-            width: 250px;
-            height: 180px;
-            margin: 0 auto;
+            width: 200px;
+            height: 150px;
+            margin: 30px auto;
         }
         
-        .cake-layer {
-            position: absolute;
-            width: 100%;
+        .layer {
+            width: 200px;
             height: 50px;
             border-radius: 10px 10px 0 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: absolute;
+            left: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         
-        .cake-layer:nth-child(1) {
+        .layer1 { 
             background: linear-gradient(to bottom, #ff9999, #ff7777);
             top: 0;
             z-index: 3;
         }
         
-        .cake-layer:nth-child(2) {
+        .layer2 { 
             background: linear-gradient(to bottom, #ff6666, #ff4444);
-            top: 45px;
+            top: 40px;
             z-index: 2;
-            width: 110%;
-            left: -5%;
         }
         
-        .cake-layer:nth-child(3) {
+        .layer3 { 
             background: linear-gradient(to bottom, #cc3333, #aa2222);
-            top: 90px;
+            top: 80px;
             z-index: 1;
-            width
+            height: 60px;
+            border-radius: 10px 10px 20px 20px;
+        }
+        
+        .cake-message {
+            margin-top: 20px;
+            font-style: italic;
+            color: #d63031;
+            font-size: 16px;
+        }
+        
+        .candle {
+            width: 10px;
+            height: 40px;
+            background: #ffcc00;
+            position: absolute;
+            top: -40px;
+            left: 95px;
+            border-radius: 3px;
+        }
+        
+        .flame {
+            width: 15px;
+            height: 20px;
+            background: orange;
+            position: absolute;
+            top: -20px;
+            left: 92px;
+            border-radius: 50% 50% 50% 50%;
+            animation: flicker 0.8s infinite alternate;
+        }
+        
+        .letter-btn {
+            background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            display: block;
+        }
+        
+        .letter-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        .letter-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff8f8;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.6;
+            display: none;
+        }
+        
+        @keyframes flicker {
+            0%, 100% { transform: scale(1) rotate(-2deg); }
+            25% { transform: scale(1.05) rotate(0deg); }
+            50% { transform: scale(0.95) rotate(2deg); }
+            75% { transform: scale(1.1) rotate(-1deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday My Brown Bear! 🎂</h1>
+
+    <div class="cake">
+        <div class="layer layer1"></div>
+        <div class="layer layer2"></div>
+        <div class="layer layer3"></div>
+        <div class="candle"></div>
+        <div class="flame"></div>
+    </div>
+    <div class="cake-message">My love for you is sweeter than this cake</div>
+
+    <button class="letter-btn" id="letterButton">Read My Love Letter 💌</button>
+
+    <div class="letter-container" id="letterContainer">
+        <p><strong>My Love,</strong></p>
+        <p>Little did I know that 24 years ago today, the love of my life, the light in my days, and the peace in my storms would be born. I love you more than words can express, and I will love you for the rest of my life. You are my everythinggg, the greatest gift life has given me. I cannot begin to describe how grateful I am to God and to Madhura Mommy for bringing you into this world, for making our paths cross so that I could find my other half.</p>
+        <p>Today is the most special day for me because you are the most important person in my life. It feels like a miracle that you were born in India and I was born in Türkiye, yet somehow, against all odds, we found each other in Germany. Don't you think we were meant to be?</p>
+        <p>My love, you are the first person with whom I've ever dreamed of building a future. On nights when I can't sleep, I look at our pictures and videos, imagining the life we will create together. I know that one day, we will be the happiest family in the world. I want to be with you to celebrate your birthdays, to laugh with you every day, and to love and support you through everything for the rest of my life. You are my one and only, and there is no one else in this world for me but you.</p>
+        <p>You deserve nothing but the best, and I promise that I will be there for your next birthday. I know this is the first and last birthday we'll have to spend apart and after this, we will be together forever. I love you so much, and I'm sending you a hundred kisses from here. I'm sorry I can't be with you today, but I am celebrating you from afar.</p>
+        <p>I wish you a life filled with happiness, success, peace, health, and most importantly... ME! Happy birthday, my love. I am so incredibly grateful that you were born. You are the best, the most handsome, the smartest, the kindest, and the most thoughtful boyfriend in the world. Thank you for everything you've given me. I promise to stand by your side for the rest of my life.</p>
+        <p>I love you more than words can say, I love you endlessly, I love you in every universe 😍😍😍😍</p>
+        <p><em>Forever yours,</em></p>
+        <p><em>Duygu</em></p>
+    </div>
+
+    <script>
+        const letterButton = document.getElementById('letterButton');
+        const letterContainer = document.getElementById('letterContainer');
+        
+        letterButton.addEventListener('click', function() {
+            if (letterContainer.style.display === 'block') {
+                letterContainer.style.display = 'none';
+                letterButton.textContent = 'Read My Love Letter 💌';
+            } else {
+                letterContainer.style.display = 'block';
+                letterButton.textContent = 'Close Letter ❤️';
+            }
+        });
+    </script>
+</body>
+</html>
