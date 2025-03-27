@@ -10,6 +10,11 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             color: #6d214f;
+            background-image: radial-gradient(#ffb6c1 2px, transparent 2px);
+            background-size: 30px 30px;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
         }
         h1 {
             font-size: 36px;
@@ -17,70 +22,223 @@
             color: #d63031;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .cake-container {
+            margin: 40px auto;
+            padding: 20px;
+            position: relative;
         }
         .cake {
             position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 30px auto;
+            width: 250px;
+            height: 180px;
+            margin: 0 auto;
         }
         .layer {
-            width: 200px;
-            height: 60px;
-            border-radius: 10px;
+            width: 250px;
+            height: 50px;
+            border-radius: 10px 10px 0 0;
             position: absolute;
             left: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
-        .layer1 { background: #ff9999; top: 0; }
-        .layer2 { background: #ff6666; top: 50px; }
-        .layer3 { background: #cc3333; top: 100px; }
-        .candle {
-            width: 10px;
-            height: 40px;
-            background: #ffcc00;
+        .layer1 { 
+            background: linear-gradient(to bottom, #ff9999, #ff7777);
+            top: 0;
+            z-index: 3;
+            border-radius: 10px 10px 0 0;
+        }
+        .layer2 { 
+            background: linear-gradient(to bottom, #ff6666, #ff4444);
+            top: 45px;
+            z-index: 2;
+            width: 270px;
+            left: -10px;
+        }
+        .layer3 { 
+            background: linear-gradient(to bottom, #cc3333, #aa2222);
+            top: 90px;
+            z-index: 1;
+            width: 290px;
+            height: 60px;
+            left: -20px;
+            border-radius: 10px 10px 20px 20px;
+        }
+        .icing {
             position: absolute;
-            top: -40px;
-            left: 95px;
+            width: 100%;
+            height: 15px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 4;
+        }
+        .icing1 {
+            top: 40px;
+            width: 250px;
+            left: 0;
+        }
+        .icing2 {
+            top: 85px;
+            width: 270px;
+            left: -10px;
+        }
+        .candle {
+            width: 12px;
+            height: 50px;
+            background: linear-gradient(to right, #ffcc00, #ffdd33, #ffcc00);
+            position: absolute;
+            top: -50px;
+            left: 119px;
             border-radius: 3px;
+            z-index: 5;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .candle:hover {
+            transform: scale(1.05);
         }
         .flame {
-            width: 15px;
-            height: 20px;
-            background: orange;
+            width: 16px;
+            height: 30px;
+            background: linear-gradient(to bottom, white, orange, #ff3300);
             position: absolute;
-            top: -20px;
-            left: 92px;
-            border-radius: 50% 50% 50% 50%;
+            top: -30px;
+            left: 117px;
+            border-radius: 50% 50% 20% 20%;
+            z-index: 6;
+            box-shadow: 0 0 15px #ff9966;
+            animation: flicker 0.8s infinite alternate;
+            transform-origin: bottom;
+        }
+        .flame-out {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .decoration {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 4;
+        }
+        .decoration1 {
+            width: 10px;
+            height: 10px;
+            background: #ffdd33;
+            top: 20px;
+            left: 30px;
+        }
+        .decoration2 {
+            width: 8px;
+            height: 8px;
+            background: #ff9966;
+            top: 15px;
+            right: 40px;
+        }
+        .decoration3 {
+            width: 12px;
+            height: 12px;
+            background: #ff6699;
+            bottom: 70px;
+            left: 50px;
+        }
+        .decoration4 {
+            width: 9px;
+            height: 9px;
+            background: #ffcc00;
+            bottom: 65px;
+            right: 60px;
         }
         .roses {
             font-size: 50px;
-            margin: 20px 0;
+            margin: 40px 0;
+            animation: float 3s ease-in-out infinite;
         }
         .letter-container {
             width: 60%;
             margin: 40px auto;
-            padding: 20px;
+            padding: 30px;
             background: #fff8f8;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
             text-align: left;
             font-size: 18px;
             line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        .letter-container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            right: 20px;
+            height: 20px;
+            background: #ffcccc;
+            border-radius: 50%;
+            filter: blur(10px);
+            z-index: -1;
         }
         .letter-container p {
-            margin: 10px 0;
+            margin: 15px 0;
+        }
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .heart {
+            position: absolute;
+            opacity: 0;
+            animation: float-up 4s linear forwards;
+        }
+        
+        @keyframes flicker {
+            0%, 100% { transform: scale(1) rotate(-2deg); }
+            25% { transform: scale(1.05) rotate(0deg); }
+            50% { transform: scale(0.95) rotate(2deg); }
+            75% { transform: scale(1.1) rotate(-1deg); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes float-up {
+            0% { 
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="hearts" id="hearts"></div>
+    
     <h1>Happy Birthday My Brown Bear! 🎂</h1>
 
-    <div class="cake">
-        <div class="layer layer1"></div>
-        <div class="layer layer2"></div>
-        <div class="layer layer3"></div>
-        <div class="candle"></div>
-        <div class="flame"></div>
+    <div class="cake-container">
+        <div class="cake">
+            <div class="layer layer1"></div>
+            <div class="icing icing1"></div>
+            <div class="layer layer2"></div>
+            <div class="icing icing2"></div>
+            <div class="layer layer3"></div>
+            <div class="decoration decoration1"></div>
+            <div class="decoration decoration2"></div>
+            <div class="decoration decoration3"></div>
+            <div class="decoration decoration4"></div>
+            <div class="candle" id="candle"></div>
+            <div class="flame" id="flame"></div>
+        </div>
     </div>
 
     <div class="roses">🌹🌹🌹🌹🌹</div>
@@ -88,12 +246,61 @@
     <div class="letter-container">
         <p><strong>My Love,</strong></p>
         <p>Little did I know that 24 years ago today, the love of my life, the light in my days, and the peace in my storms would be born. I love you more than words can express, and I will love you for the rest of my life...</p>
-        <p>Today is the most special day for me because you are the most important person in my life. It feels like a miracle that you were born in India and I was born in Türkiye, yet somehow, against all odds, we found each other in Germany. Don’t you think we were meant to be?</p>
-        <p>My love, you are the first person with whom I’ve ever dreamed of building a future. On nights when I can’t sleep, I look at our pictures and videos, imagining the life we will create together...</p>
-        <p>You deserve nothing but the best, and I promise that I will be there for your next birthday. I know this is the first and last birthday we’ll have to spend apart and after this, we will be together forever.</p>
+        <p>Today is the most special day for me because you are the most important person in my life. It feels like a miracle that you were born in India and I was born in Türkiye, yet somehow, against all odds, we found each other in Germany. Don't you think we were meant to be?</p>
+        <p>My love, you are the first person with whom I've ever dreamed of building a future. On nights when I can't sleep, I look at our pictures and videos, imagining the life we will create together...</p>
+        <p>You deserve nothing but the best, and I promise that I will be there for your next birthday. I know this is the first and last birthday we'll have to spend apart and after this, we will be together forever.</p>
         <p>I wish you a life filled with happiness, success, peace, health, and most importantly… ME! Happy birthday, my love. I am so incredibly grateful that you were born...</p>
         <p><strong>I love you more than words can say, I love you endlessly, I love you in every universe. ❤️</strong></p>
         <p><em>— Duygu</em></p>
     </div>
+
+    <script>
+        const candle = document.getElementById('candle');
+        const flame = document.getElementById('flame');
+        const heartsContainer = document.getElementById('hearts');
+        
+        // Candle interaction
+        let isLit = true;
+        
+        candle.addEventListener('click', () => {
+            isLit = !isLit;
+            if (isLit) {
+                flame.classList.remove('flame-out');
+                createHearts(10);
+            } else {
+                flame.classList.add('flame-out');
+            }
+        });
+        
+        // Create floating hearts
+        function createHearts(count) {
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.innerHTML = '❤️';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                    heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                    heartsContainer.appendChild(heart);
+                    
+                    // Remove heart after animation
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 4000);
+                }, i * 300);
+            }
+        }
+        
+        // Initial hearts
+        createHearts(5);
+        
+        // Create occasional hearts
+        setInterval(() => {
+            if (isLit && Math.random() > 0.7) {
+                createHearts(1);
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
