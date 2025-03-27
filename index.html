@@ -6,8 +6,6 @@
   <title>Happy Birthday My Brown Bear!</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome for envelope icon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     /* Reset */
     * {
@@ -45,76 +43,12 @@
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    /* Cake Design */
-    .cake-container {
-      margin: 30px 0;
-      display: flex;
-      justify-content: center;
-    }
-    .cake {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      margin: 0 auto;
-      border-radius: 20px;
-      background: #f3e5ab; /* Cake base color */
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
-    }
-    /* Cake Layers with white icing */
-    .cake-layer {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #f3e5ab;
-      border: 8px solid #fff;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(255,255,255,0.7);
-    }
-    .layer-bottom {
-      width: 280px;
-      height: 100px;
-      bottom: 0;
-    }
-    .layer-middle {
-      width: 240px;
-      height: 80px;
-      bottom: 100px;
-    }
-    .layer-top {
-      width: 200px;
-      height: 60px;
-      bottom: 180px;
-    }
-    /* Stylish Candle */
-    .candle {
-      position: absolute;
-      bottom: 190px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 20px;
-      height: 70px;
-      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
-      border-radius: 10px 10px 0 0;
-      box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-      z-index: 2;
-    }
-    /* Improved Flame */
-    .flame {
-      position: absolute;
-      bottom: 260px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 25px;
-      height: 25px;
-      background: radial-gradient(circle at 50% 50%, #ffd700, #ff8c00);
-      border-radius: 50%;
-      box-shadow: 0 0 15px rgba(255,215,0,0.8);
-      animation: flicker 1s infinite alternate;
-      z-index: 3;
-    }
-    @keyframes flicker {
-      0% { transform: translateX(-50%) scale(1); opacity: 1; }
-      100% { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
+    /* Birthday Cake Image */
+    .cake-container img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
     /* Romantic Envelope Button */
     .letter-btn {
@@ -172,11 +106,6 @@
     /* Responsive */
     @media (max-width: 768px) {
       h1 { font-size: 2.5rem; }
-      .cake { width: 240px; height: 240px; }
-      .cake-layer.layer-bottom { width: 220px; height: 80px; }
-      .cake-layer.layer-middle { width: 180px; height: 65px; }
-      .cake-layer.layer-top { width: 150px; height: 50px; }
-      .candle { height: 55px; }
     }
   </style>
 </head>
@@ -184,19 +113,9 @@
   <div class="container">
     <h1>Happy birthday my brown bear!</h1>
     <div class="cake-container">
-      <div class="cake">
-        <!-- Cake Layers -->
-        <div class="cake-layer layer-bottom"></div>
-        <div class="cake-layer layer-middle"></div>
-        <div class="cake-layer layer-top"></div>
-        <!-- Candle and Flame -->
-        <div class="candle"></div>
-        <div class="flame"></div>
-      </div>
+      <img src="https://i.imgur.com/B5vUJsn.jpg" alt="Birthday Cake">
     </div>
-    <div class="letter-btn" onclick="openLetter()">
-      <i class="fas fa-envelope"></i>
-    </div>
+    <div class="letter-btn" onclick="openLetter()">💌</div>
   </div>
 
   <!-- Letter Modal -->
@@ -210,7 +129,6 @@
       <p>Little did I know that 24 years ago today, the love of my life, the light in my days, and the peace in my storms would be born. I love you more than words can express, and I will love you for the rest of my life. You are my everythinggg, the greatest gift life has given me. I cannot begin to describe how grateful I am to God and to Madhura Mommy for bringing you into this world, for making our paths cross so that I could find my other half.</p>
       <p>Today is the most special day for me because you are the most important person in my life. It feels like a miracle that you were born in India and I was born in Türkiye, yet somehow, against all odds, we found each other in Germany. Don’t you think we were meant to be?</p>
       <p>My love, you are the first person with whom I’ve ever dreamed of building a future. On nights when I can’t sleep, I look at our pictures and videos, imagining the life we will create together. I know that one day, we will be the happiest family in the world. I want to be with you to celebrate your birthdays, to laugh with you every day, and to love and support you through everything for the rest of my life. You are my one and only, and there is no one else in this world for me but you.</p>
-      <p>You deserve nothing but the best, and I promise that I will be there for your next birthday. I know this is the first and last birthday we’ll have to spend apart and after this, we will be together forever. I love you so much, and I’m sending you a hundred kisses from here. I’m sorry I can’t be with you today, but I am celebrating you from afar.</p>
       <p>I wish you a life filled with happiness, success, peace, health, and most importantly… ME! Happy birthday, my love. I am so incredibly grateful that you were born. You are the best, the most handsome, the smartest, the kindest, and the most thoughtful boyfriend in the world. Thank you for everything you’ve given me. I promise to stand by your side for the rest of my life.</p>
       <p>I love you more than words can say, I love you endlessly, I love you in every universe 😍😍😍😍</p>
       <p>Duygu</p>
@@ -218,7 +136,6 @@
   </div>
 
   <script>
-    // Modal open/close functions
     function openLetter() {
       document.getElementById('letterModal').style.display = 'block';
     }
