@@ -6,36 +6,55 @@
     <title>Happy Birthday My Brown Bear!</title>
     <style>
         body {
-            background: url('https://i.imgur.com/q3A2qX5.jpg') repeat;
+            background-color: #ffe6f2;
             font-family: 'Arial', sans-serif;
             text-align: center;
             color: #6d214f;
-        }
-        .container {
-            margin-top: 50px;
         }
         h1 {
             font-size: 36px;
             font-weight: bold;
             color: #d63031;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .cake-container, .roses-container {
-            margin: 20px auto;
-            width: 300px;
-        }
-        .cake, .roses {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .note {
-            font-size: 18px;
             margin-top: 20px;
-            padding: 15px;
-            background: #ffcccc;
+        }
+        .cake {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 30px auto;
+        }
+        .layer {
+            width: 200px;
+            height: 60px;
             border-radius: 10px;
-            display: inline-block;
+            position: absolute;
+            left: 0;
+        }
+        .layer1 { background: #ff9999; top: 0; }
+        .layer2 { background: #ff6666; top: 50px; }
+        .layer3 { background: #cc3333; top: 100px; }
+        .candle {
+            width: 10px;
+            height: 40px;
+            background: #ffcc00;
+            position: absolute;
+            top: -40px;
+            left: 95px;
+            border-radius: 3px;
+        }
+        .flame {
+            width: 15px;
+            height: 20px;
+            background: orange;
+            position: absolute;
+            top: -20px;
+            left: 92px;
+            border-radius: 50% 50% 50% 50%;
+        }
+        .roses {
+            font-size: 50px;
+            margin: 20px 0;
         }
         .letter-container {
             width: 60%;
@@ -54,28 +73,27 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Happy Birthday My Brown Bear! 🎂</h1>
+    <h1>Happy Birthday My Brown Bear! 🎂</h1>
 
-        <div class="cake-container">
-            <img class="cake" src="https://i.imgur.com/N7XUe1n.png" alt="Birthday Cake">
-        </div>
-        
-        <div class="roses-container">
-            <img class="roses" src="https://i.imgur.com/4M7bEdP.png" alt="Red Roses Bouquet">
-        </div>
+    <div class="cake">
+        <div class="layer layer1"></div>
+        <div class="layer layer2"></div>
+        <div class="layer layer3"></div>
+        <div class="candle"></div>
+        <div class="flame"></div>
+    </div>
 
-        <div class="note">
-            <p>My love, I wish you the happiest birthday! May your day be as sweet as this cake and as wonderful as you are! 🎉❤️</p>
-        </div>
-        
-        <div class="letter-container">
-            <p><strong>My Love,</strong></p>
-            <p>Little did I know that 24 years ago today, the love of my life, the light in my days, and the peace in my storms would be born. I love you more than words can express, and I will love you for the rest of my life...</p>
-            <p>You deserve nothing but the best, and I promise that I will be there for your next birthday...</p>
-            <p><strong>I love you more than words can say, I love you endlessly, I love you in every universe. ❤️</strong></p>
-            <p><em>— Duygu</em></p>
-        </div>
+    <div class="roses">🌹🌹🌹🌹🌹</div>
+
+    <div class="letter-container">
+        <p><strong>My Love,</strong></p>
+        <p>Little did I know that 24 years ago today, the love of my life, the light in my days, and the peace in my storms would be born. I love you more than words can express, and I will love you for the rest of my life...</p>
+        <p>Today is the most special day for me because you are the most important person in my life. It feels like a miracle that you were born in India and I was born in Türkiye, yet somehow, against all odds, we found each other in Germany. Don’t you think we were meant to be?</p>
+        <p>My love, you are the first person with whom I’ve ever dreamed of building a future. On nights when I can’t sleep, I look at our pictures and videos, imagining the life we will create together...</p>
+        <p>You deserve nothing but the best, and I promise that I will be there for your next birthday. I know this is the first and last birthday we’ll have to spend apart and after this, we will be together forever.</p>
+        <p>I wish you a life filled with happiness, success, peace, health, and most importantly… ME! Happy birthday, my love. I am so incredibly grateful that you were born...</p>
+        <p><strong>I love you more than words can say, I love you endlessly, I love you in every universe. ❤️</strong></p>
+        <p><em>— Duygu</em></p>
     </div>
 </body>
 </html>
