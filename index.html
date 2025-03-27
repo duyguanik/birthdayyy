@@ -3,161 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday My Soulmate! 💖</title>
+    <title>Happy Birthday Aryan! 🎂</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #ff3366;
-            --secondary: #ff758c;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', cursive;
+            font-family: 'Dancing Script', cursive;
         }
 
         body {
-            background: linear-gradient(45deg, #2a0a3a, #4a154b);
+            background: linear-gradient(45deg, #8B0000, #FF6347);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            overflow-x: hidden;
-        }
-
-        .container {
-            text-align: center;
-            padding: 20px;
-            color: white;
             position: relative;
+            overflow: hidden;
         }
 
         h1 {
-            font-size: 4em;
-            margin-bottom: 30px;
-            text-shadow: 0 0 20px var(--primary);
-            animation: glow 2s ease-in-out infinite;
-            font-family: 'Dancing Script', cursive;
+            font-size: 3.5em;
+            color: white;
+            text-shadow: 0 0 10px #FFD700;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #FFD700; }
+            100% { text-shadow: 0 0 20px #FFA500; }
         }
 
         .cake-container {
-            perspective: 1000px;
-            margin: 50px 0;
+            position: relative;
+            margin-top: 20px;
         }
 
         .cake {
-            position: relative;
-            width: 250px;
-            height: 250px;
-            margin: 0 auto;
-            transform-style: preserve-3d;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .layer {
-            background: linear-gradient(45deg, #fff0f3, #ffffff);
-            border-radius: 15px;
-            position: absolute;
-            box-shadow: 0 0 30px rgba(255,51,102,0.3);
-            transition: all 0.3s;
-        }
-
-        .layer-bottom {
             width: 200px;
-            height: 100px;
-            bottom: 0;
-            left: 25px;
-            transform: rotateX(45deg);
-        }
-
-        .layer-middle {
-            width: 160px;
-            height: 70px;
-            bottom: 90px;
-            left: 45px;
-            transform: rotateX(30deg);
-        }
-
-        .layer-top {
-            width: 120px;
-            height: 50px;
-            bottom: 150px;
-            left: 65px;
-            transform: rotateX(15deg);
+            height: 120px;
+            background: linear-gradient(to bottom, #FFDAB9, #FFB6C1);
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .candle {
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
-            width: 15px;
-            height: 50px;
             position: absolute;
-            bottom: 180px;
-            left: 117px;
-            border-radius: 5px 5px 0 0;
-            animation: flame 0.8s infinite alternate;
+            width: 10px;
+            height: 40px;
+            background: red;
+            left: 50%;
+            top: -40px;
+            transform: translateX(-50%);
+            border-radius: 5px;
         }
 
         .flame {
-            width: 20px;
-            height: 40px;
-            background: linear-gradient(white, #ffd700);
             position: absolute;
-            bottom: 220px;
-            left: 112px;
-            border-radius: 50% 50% 35% 35%;
-            filter: blur(2px);
-            animation: flicker 0.1s infinite;
-        }
-
-        .sparkles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .sparkle {
-            position: absolute;
-            background: rgba(255,255,255,0.8);
-            width: 3px;
-            height: 3px;
+            width: 15px;
+            height: 25px;
+            background: orange;
+            left: 50%;
+            top: -25px;
+            transform: translateX(-50%);
             border-radius: 50%;
-            animation: sparkle 1s linear infinite;
+            animation: flicker 0.8s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.7; transform: scale(1.2); }
         }
 
         .love-letter {
             position: fixed;
-            bottom: 40px;
-            right: 40px;
+            bottom: 50px;
+            right: 50px;
+            font-size: 50px;
+            color: white;
             cursor: pointer;
-            transition: all 0.3s;
-            z-index: 1000;
-            filter: drop-shadow(0 0 10px var(--primary));
-        }
-
-        .envelope {
-            font-size: 60px;
-            color: var(--primary);
             animation: pulse 2s infinite;
-        }
-
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes flame {
-            0% { transform: scale(1); opacity: 0.9; }
-            100% { transform: scale(1.1); opacity: 1; }
-        }
-
-        @keyframes glow {
-            0%, 100% { text-shadow: 0 0 20px var(--primary); }
-            50% { text-shadow: 0 0 40px var(--secondary); }
         }
 
         @keyframes pulse {
@@ -166,123 +94,81 @@
             100% { transform: scale(1); }
         }
 
-        @keyframes sparkle {
-            0% { transform: translateY(0) scale(0); opacity: 1; }
-            100% { transform: translateY(-100px) scale(1); opacity: 0; }
-        }
-
-        /* Enhanced Letter Modal */
         .letter-modal {
             display: none;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: #fff0f3;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 0 50px rgba(255,51,102,0.5);
+            background: white;
+            padding: 20px;
+            width: 80%;
             max-width: 600px;
-            width: 90%;
-            color: #4a154b;
-            border: 3px solid var(--primary);
-            z-index: 1001;
+            box-shadow: 0 0 30px rgba(255,0,0,0.5);
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.4em;
+            color: #8B0000;
         }
 
         .close-btn {
             position: absolute;
-            right: 20px;
-            top: 15px;
-            font-size: 30px;
+            top: 10px;
+            right: 15px;
+            font-size: 25px;
             cursor: pointer;
-            color: var(--primary);
-            transition: all 0.3s;
-        }
-
-        .close-btn:hover {
-            transform: rotate(90deg) scale(1.2);
-        }
-
-        .letter-content {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.5em;
-            line-height: 1.6;
+            color: red;
         }
 
         .heart {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
+            width: 15px;
+            height: 15px;
+            background: red;
             transform: rotate(45deg);
-            animation: heartbeat 1.4s linear infinite;
+            animation: floatHearts 4s infinite linear;
         }
 
         .heart::before,
         .heart::after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
+            width: 15px;
+            height: 15px;
+            background: red;
             border-radius: 50%;
         }
 
-        .heart::before {
-            left: -10px;
-        }
+        .heart::before { left: -8px; }
+        .heart::after { top: -8px; }
 
-        .heart::after {
-            top: -10px;
-        }
-
-        @keyframes heartbeat {
-            0% { transform: rotate(45deg) scale(1); }
-            14% { transform: rotate(45deg) scale(1.3); }
-            28% { transform: rotate(45deg) scale(1); }
-            42% { transform: rotate(45deg) scale(1.3); }
-            70% { transform: rotate(45deg) scale(1); }
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5em; }
-            .envelope { font-size: 40px; }
+        @keyframes floatHearts {
+            0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+            100% { transform: translateY(-150px) rotate(45deg); opacity: 0; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Happy Birthday My Everything! 🌟</h1>
-        
-        <div class="cake-container">
-            <div class="cake">
-                <div class="layer layer-bottom"></div>
-                <div class="layer layer-middle"></div>
-                <div class="layer layer-top"></div>
-                <div class="candle"></div>
-                <div class="flame"></div>
-                <div class="sparkles">
-                    <div class="sparkle" style="left: 30%; animation-delay: 0.2s"></div>
-                    <div class="sparkle" style="left: 60%; animation-delay: 0.5s"></div>
-                </div>
-            </div>
-        </div>
 
-        <div class="love-letter" onclick="openLetter()">
-            <i class="fas fa-heart envelope"></i>
-        </div>
+    <h1>Happy Birthday My Love! ❤️</h1>
 
-        <div id="letterModal" class="letter-modal">
-            <span class="close-btn" onclick="closeLetter()">&times;</span>
-            <div class="heart" style="top:20px; left:50px"></div>
-            <div class="heart" style="bottom:20px; right:50px"></div>
-            <div class="letter-content">
-                <h2>My Dearest Love,</h2>
-                <p>Every day with you feels like a beautiful dream...</p>
-                <!-- Add your custom message here -->
-                <p>Forever Yours,<br>Your [Name]</p>
-            </div>
+    <div class="cake-container">
+        <div class="cake">
+            <div class="candle"></div>
+            <div class="flame"></div>
         </div>
+    </div>
+
+    <div class="love-letter" onclick="openLetter()">
+        <i class="fas fa-envelope"></i>
+    </div>
+
+    <div id="letterModal" class="letter-modal">
+        <span class="close-btn" onclick="closeLetter()">&times;</span>
+        <p>My Love,</p>
+        <p>Little did I know that 24 years ago today, the love of my life was born...</p>
+        <p>I love you endlessly! ❤️</p>
+        <p>Forever Yours,<br>Duygu</p>
     </div>
 
     <script>
@@ -297,23 +183,16 @@
 
         function createHearts() {
             for(let i = 0; i < 10; i++) {
-                const heart = document.createElement('div');
+                let heart = document.createElement('div');
                 heart.className = 'heart';
-                heart.style.left = Math.random() * 95 + '%';
-                heart.style.animationDelay = Math.random() * 2 + 's';
+                heart.style.left = Math.random() * 100 + 'vw';
                 document.body.appendChild(heart);
-                
-                setTimeout(() => heart.remove(), 1400);
+                setTimeout(() => heart.remove(), 4000);
             }
         }
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('letterModal');
-            if (event.target === modal) closeLetter();
-        }
-
-        // Add floating hearts occasionally
         setInterval(createHearts, 3000);
     </script>
+
 </body>
 </html>
