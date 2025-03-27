@@ -1,83 +1,122 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Happy Birthday Aryan!</title>
-  <!-- Google Fonts: Montserrat for body, Dancing Script for başlık -->
+  <title>Happy Birthday My Brown Bear!</title>
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <!-- Font Awesome for envelope icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    /* Genel Sıfırlama */
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    /* Background with heart pattern */
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #f5f5f5;
-      color: #333;
+      background-color: #fff5f5;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><path d='M20 36s-8.572-7.432-15.142-13.142C-.857 16.857 2.857 9.714 10 7c3.714-1.714 8 1.714 10 4 2-2.286 6.286-5.714 10-4 7.143 2.714 10.857 9.857 5.142 15.858C28.572 28.568 20 36 20 36z' fill='%23FF6F61' fill-opacity='0.2'/></svg>");
+      background-repeat: repeat;
+      background-size: 40px 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
       position: relative;
+      overflow: hidden;
     }
     h1 {
       font-family: 'Dancing Script', cursive;
       font-size: 3rem;
       margin-bottom: 20px;
+      color: #d6336c;
+      text-shadow: 0 0 8px rgba(214,51,108,0.7);
     }
     .container {
       text-align: center;
       z-index: 2;
+      padding: 20px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    /* Pasta ve Mum */
+    /* Cake Design */
     .cake-container {
-      margin: 20px 0;
+      margin: 30px 0;
+      display: flex;
+      justify-content: center;
     }
     .cake {
       position: relative;
-      width: 200px;
-      height: 200px;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin: 0 auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #ffe6e6, #ffffff);
+      box-shadow: 8px 8px 16px #d1cfcf, -8px -8px 16px #ffffff;
+      overflow: hidden;
     }
-    .candle {
+    /* Cake layers */
+    .cake-layer {
       position: absolute;
-      top: -40px;
       left: 50%;
       transform: translateX(-50%);
-      width: 10px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: inset 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .layer-bottom {
+      width: 200px;
+      height: 70px;
+      bottom: 10px;
+    }
+    .layer-middle {
+      width: 170px;
+      height: 50px;
+      bottom: 80px;
+    }
+    .layer-top {
+      width: 140px;
       height: 40px;
-      background: #FF6F61;
-      border-radius: 5px;
+      bottom: 130px;
+    }
+    /* Stylish Candle */
+    .candle {
+      position: absolute;
+      bottom: 160px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 50px;
+      background: #ff6f61;
+      border-radius: 6px 6px 0 0;
+      z-index: 2;
     }
     .flame {
       position: absolute;
-      top: -30px;
+      bottom: 205px;
       left: 50%;
       transform: translateX(-50%);
-      width: 15px;
-      height: 20px;
-      background: #FFD700;
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle, #ffd700 40%, #ff6f61 70%);
       border-radius: 50%;
-      animation: flicker 0.8s infinite alternate;
+      box-shadow: 0 0 8px rgba(255,215,0,0.8);
+      animation: flicker 1s infinite alternate;
+      z-index: 3;
     }
     @keyframes flicker {
-      from { opacity: 1; transform: translateX(-50%) scale(1); }
-      to { opacity: 0.7; transform: translateX(-50%) scale(1.2); }
+      from { transform: translateX(-50%) scale(1); opacity: 1; }
+      to { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
     }
-    /* Zarf Butonu */
+    /* Romantic Envelope Button */
     .letter-btn {
       font-size: 2.5rem;
-      color: #FF6F61;
+      color: #d6336c;
       cursor: pointer;
       margin-top: 20px;
       transition: transform 0.3s ease;
@@ -85,18 +124,18 @@
     .letter-btn:hover {
       transform: scale(1.1);
     }
-    /* Mektup Modalı */
+    /* Letter Modal */
     .letter-modal {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 90%;
-      max-width: 600px;
+      max-width: 700px;
       background: #fff;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       display: none;
       z-index: 10;
       overflow-y: auto;
@@ -110,52 +149,44 @@
     }
     .modal-header h2 {
       font-family: 'Dancing Script', cursive;
-      font-size: 2rem;
-      color: #333;
+      font-size: 2.2rem;
+      color: #d6336c;
     }
     .close-btn {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       cursor: pointer;
-      color: #FF6F61;
+      color: #d6336c;
     }
     .modal-content {
       text-align: left;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #555;
       font-size: 1rem;
     }
-    /* Minimal Kalp Animasyonları */
-    .heart {
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      background: #FF6F61;
-      transform: rotate(45deg);
-      opacity: 0.8;
-      animation: float 4s ease-in-out infinite;
-      z-index: 1;
+    .modal-content p {
+      margin-bottom: 15px;
     }
-    .heart::before, .heart::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #FF6F61;
-      border-radius: 50%;
-    }
-    .heart::before { top: -10px; left: 0; }
-    .heart::after { left: -10px; top: 0; }
-    @keyframes float {
-      from { transform: translateY(0) rotate(45deg); opacity: 1; }
-      to { transform: translateY(-100px) rotate(45deg); opacity: 0; }
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .cake { width: 180px; height: 180px; }
+      .cake-layer.layer-bottom { width: 160px; height: 60px; }
+      .cake-layer.layer-middle { width: 140px; height: 45px; }
+      .cake-layer.layer-top { width: 120px; height: 35px; }
+      .candle { height: 40px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Happy Birthday Aryan!</h1>
+    <h1>Happy birthday my brown bear!</h1>
     <div class="cake-container">
       <div class="cake">
+        <!-- Cake Layers -->
+        <div class="cake-layer layer-bottom"></div>
+        <div class="cake-layer layer-middle"></div>
+        <div class="cake-layer layer-top"></div>
+        <!-- Candle and Flame -->
         <div class="candle"></div>
         <div class="flame"></div>
       </div>
@@ -165,7 +196,7 @@
     </div>
   </div>
 
-  <!-- Mektup Modalı -->
+  <!-- Letter Modal -->
   <div id="letterModal" class="letter-modal">
     <div class="modal-header">
       <h2>My Love,</h2>
@@ -184,26 +215,13 @@
   </div>
 
   <script>
-    // Modal açma ve kapama fonksiyonları
+    // Modal open/close functions
     function openLetter() {
       document.getElementById('letterModal').style.display = 'block';
-      createHearts();
     }
     function closeLetter() {
       document.getElementById('letterModal').style.display = 'none';
     }
-    // Arka planda rastgele kalp animasyonları oluşturma
-    function createHearts() {
-      for (let i = 0; i < 8; i++) {
-        let heart = document.createElement('div');
-        heart.className = 'heart';
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.top = Math.random() * 100 + 'vh';
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 4000);
-      }
-    }
-    setInterval(createHearts, 3000);
   </script>
 </body>
 </html>
