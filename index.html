@@ -41,7 +41,7 @@
       text-align: center;
       z-index: 2;
       padding: 20px;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.93);
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
@@ -53,65 +53,68 @@
     }
     .cake {
       position: relative;
-      width: 220px;
-      height: 220px;
-      border-radius: 15px;
-      background: linear-gradient(145deg, #ffe6e6, #ffffff);
-      box-shadow: 8px 8px 16px #d1cfcf, -8px -8px 16px #ffffff;
-      overflow: hidden;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      border-radius: 20px;
+      background: #f3e5ab; /* Cake base color */
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
     }
-    /* Cake layers */
+    /* Cake Layers with white icing */
     .cake-layer {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: inset 0 4px 8px rgba(0,0,0,0.1);
+      background: #f3e5ab;
+      border: 8px solid #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(255,255,255,0.7);
     }
     .layer-bottom {
-      width: 200px;
-      height: 70px;
-      bottom: 10px;
+      width: 280px;
+      height: 100px;
+      bottom: 0;
     }
     .layer-middle {
-      width: 170px;
-      height: 50px;
-      bottom: 80px;
+      width: 240px;
+      height: 80px;
+      bottom: 100px;
     }
     .layer-top {
-      width: 140px;
-      height: 40px;
-      bottom: 130px;
+      width: 200px;
+      height: 60px;
+      bottom: 180px;
     }
     /* Stylish Candle */
     .candle {
       position: absolute;
-      bottom: 160px;
+      bottom: 190px;
       left: 50%;
       transform: translateX(-50%);
-      width: 12px;
-      height: 50px;
-      background: #ff6f61;
-      border-radius: 6px 6px 0 0;
+      width: 20px;
+      height: 70px;
+      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+      border-radius: 10px 10px 0 0;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
       z-index: 2;
     }
+    /* Improved Flame */
     .flame {
       position: absolute;
-      bottom: 205px;
+      bottom: 260px;
       left: 50%;
       transform: translateX(-50%);
-      width: 18px;
-      height: 18px;
-      background: radial-gradient(circle, #ffd700 40%, #ff6f61 70%);
+      width: 25px;
+      height: 25px;
+      background: radial-gradient(circle at 50% 50%, #ffd700, #ff8c00);
       border-radius: 50%;
-      box-shadow: 0 0 8px rgba(255,215,0,0.8);
+      box-shadow: 0 0 15px rgba(255,215,0,0.8);
       animation: flicker 1s infinite alternate;
       z-index: 3;
     }
     @keyframes flicker {
-      from { transform: translateX(-50%) scale(1); opacity: 1; }
-      to { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
+      0% { transform: translateX(-50%) scale(1); opacity: 1; }
+      100% { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
     }
     /* Romantic Envelope Button */
     .letter-btn {
@@ -169,11 +172,11 @@
     /* Responsive */
     @media (max-width: 768px) {
       h1 { font-size: 2.5rem; }
-      .cake { width: 180px; height: 180px; }
-      .cake-layer.layer-bottom { width: 160px; height: 60px; }
-      .cake-layer.layer-middle { width: 140px; height: 45px; }
-      .cake-layer.layer-top { width: 120px; height: 35px; }
-      .candle { height: 40px; }
+      .cake { width: 240px; height: 240px; }
+      .cake-layer.layer-bottom { width: 220px; height: 80px; }
+      .cake-layer.layer-middle { width: 180px; height: 65px; }
+      .cake-layer.layer-top { width: 150px; height: 50px; }
+      .candle { height: 55px; }
     }
   </style>
 </head>
